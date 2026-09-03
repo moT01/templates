@@ -5,13 +5,14 @@
 
 .text-select-body {
   margin: 0;
-  line-height: 2.2;
+  font-size: var(--text-size-md);
+  line-height: var(--line-height-loose);
 }
 
 .token {
-  display: inline-block;
-  padding: 0.1em var(--space-xs);
-  border: 1px solid transparent;
+  display: inline;
+  padding: 0.1em 0;
+  border: none;
   border-radius: var(--radius-sm);
   background: none;
   color: inherit;
@@ -21,7 +22,7 @@
 }
 
 .token:not(:disabled):hover {
-  border-color: var(--quaternary-background);
+  background: var(--selection-color);
 }
 
 .token:focus-visible {

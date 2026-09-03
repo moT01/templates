@@ -154,6 +154,8 @@ Down:
 
 --end-crossword--
 
+### Lesson 8
+
 --text-select--
 
 Select the galaxy in the sentence below.
@@ -166,7 +168,7 @@ I ate a {{milky way}} for breakfast.
 
 Select all the nouns in the sentence.
 
-The {{chef}} bought {{apples}} and {{flour}}.
+The {{chef}} bought {{apples}} and {{flour.}}
 
 --end-text-select--
 
