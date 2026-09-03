@@ -154,6 +154,22 @@ Down:
 
 --end-crossword--
 
+--text-select--
+
+Select the galaxy in the sentence below.
+
+I ate a {{milky way}} for breakfast.
+
+--end-text-select--
+
+--text-select--
+
+Select all the nouns in the sentence.
+
+The {{chef}} bought {{apples}} and {{flour}}.
+
+--end-text-select--
+
 ## Module 2.1
 
 ### Lesson 1

@@ -6,6 +6,7 @@ import { FillInBlankTaskSchema, parseFillInBlankContent } from './fill-in-the-bl
 import { CategorizeTaskSchema, parseCategorizeContent } from './categorize';
 import { OrderTaskSchema, parseOrderContent } from './order';
 import { CrosswordTaskSchema, parseCrosswordContent } from './crossword';
+import { TextSelectTaskSchema, parseTextSelectContent } from './text-select';
 import { parseOptionListContent } from './option-list';
 
 export type Task =
@@ -14,7 +15,8 @@ export type Task =
   | z.infer<typeof FillInBlankTaskSchema>
   | z.infer<typeof CategorizeTaskSchema>
   | z.infer<typeof OrderTaskSchema>
-  | z.infer<typeof CrosswordTaskSchema>;
+  | z.infer<typeof CrosswordTaskSchema>
+  | z.infer<typeof TextSelectTaskSchema>;
 
 type TaskDefinition = {
   schema: { parse: (candidate: unknown) => Task };
@@ -45,5 +47,9 @@ export const TASK_DEFINITIONS: Record<string, TaskDefinition> = {
   crossword: {
     schema: CrosswordTaskSchema,
     parseContent: parseCrosswordContent,
+  },
+  'text-select': {
+    schema: TextSelectTaskSchema,
+    parseContent: parseTextSelectContent,
   },
 };

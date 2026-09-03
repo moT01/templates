@@ -1,0 +1,43 @@
+.text-select-prompt {
+  font-weight: 700;
+  padding: 0 var(--space-xs);
+}
+
+.text-select-body {
+  margin: 0;
+  line-height: 2.2;
+}
+
+.token {
+  display: inline-block;
+  padding: 0.1em var(--space-xs);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  user-select: none;
+}
+
+.token:not(:disabled):hover {
+  border-color: var(--quaternary-background);
+}
+
+.token:focus-visible {
+  outline: var(--border-focus);
+  outline-offset: 2px;
+}
+
+.token.selected {
+  background: var(--quaternary-background);
+}
+
+.token.answered-correct {
+  background: var(--success-background);
+  color: var(--success-color);
+}
+
+.token:disabled {
+  cursor: default;
+}
