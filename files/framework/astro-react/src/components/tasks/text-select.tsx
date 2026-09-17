@@ -90,7 +90,7 @@ export function TextSelect({ task, onCorrect }: TextSelectProps) {
       >
         {task.tokens.map((token, index) => {
           const isSelected = selected.has(index);
-          let className = 'token';
+          let className = 'text-select-token';
           if (isSelected && isAnswered) className += ' answered-correct';
           else if (isSelected) className += ' selected';
 

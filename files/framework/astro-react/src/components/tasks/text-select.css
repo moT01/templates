@@ -4,7 +4,7 @@
   line-height: var(--line-height-loose);
 }
 
-.token {
+.text-select-token {
   display: inline;
   padding: 0.1em 0;
   border: none;
@@ -16,24 +16,24 @@
   user-select: none;
 }
 
-.token:not(:disabled):hover {
+.text-select-token:not(:disabled):hover {
   background: var(--selection-color);
 }
 
-.token:focus-visible {
+.text-select-token:focus-visible {
   outline: var(--border-focus);
   outline-offset: 2px;
 }
 
-.token.selected {
+.text-select-token.selected {
   background: var(--quaternary-background);
 }
 
-.token.answered-correct {
+.text-select-token.answered-correct {
   background: var(--success-background);
   color: var(--success-color);
 }
 
-.token:disabled {
+.text-select-token:disabled {
   cursor: default;
 }

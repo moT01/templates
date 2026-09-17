@@ -18,15 +18,24 @@ You can put markdown here and it will render HTML. Like **bold**, _italic_, and 
 | data        | data     |
 | data        | data     |
 
-> Blockquotes
-
-`inline "code"`
-
 - Unordered lists
 - Item 2
 
 1. Ordered lists
 2. Item 2
+
+> Blockquotes
+
+`inline "code"`
+
+Fenced code blocks get syntax highlighting (visit https://prismjs.com/#supported-languages for supported languages):
+
+```js
+function greet(name) {
+  // say hello
+  return `Hello, ${name}!`;
+}
+```
 
 Images:
 

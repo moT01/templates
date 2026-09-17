@@ -30,6 +30,7 @@
     "react": "^19",
     "react-dom": "^19",
     "react-markdown": "^10",
+    "rehype-prism-plus": "^2",
     "remark-gfm": "^4",
     "remark-parse": "^11",
     "unified": "^11"

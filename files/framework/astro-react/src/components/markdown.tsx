@@ -1,5 +1,7 @@
+import './markdown.css';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypePrism from 'rehype-prism-plus';
 import type { ComponentPropsWithoutRef } from 'react';
 
 type MarkdownProps = {
@@ -85,7 +87,11 @@ function MarkdownImage({ node, src, alt, ...props }: MarkdownImageProps) {
 
 export function Markdown({ children }: MarkdownProps) {
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ th: TableHeaderCell, img: MarkdownImage }}>
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypePrism]}
+      components={{ th: TableHeaderCell, img: MarkdownImage }}
+    >
       {children}
     </ReactMarkdown>
   );

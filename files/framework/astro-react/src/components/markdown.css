@@ -1,0 +1,64 @@
+.code-highlight {
+  float: left;
+  min-width: 100%;
+}
+
+.code-line {
+  display: block;
+}
+
+.token.keyword,
+.token.attr-name,
+.token.builtin {
+  color: #dbb8ff;
+}
+
+.token.function,
+.token.property {
+  color: #99c9ff;
+}
+
+.token.string,
+.token.attr-value,
+.token.char,
+.token.inserted {
+  color: #acd157;
+}
+
+.token.class-name {
+  color: #f1be32;
+}
+
+.token.number,
+.token.constant,
+.token.boolean,
+.token.parameter {
+  color: #f78c6c;
+}
+
+.token.tag,
+.token.bold,
+.token.italic {
+  color: #f07178;
+}
+
+.token.operator,
+.token.punctuation,
+.token.regex,
+.token.escape {
+  color: #89ddff;
+}
+
+.token.deleted,
+.token.important {
+  color: #ff5370;
+}
+
+.token.comment {
+  color: #858591;
+  font-style: italic;
+}
+
+.token.variable {
+  color: #eeffff;
+}
