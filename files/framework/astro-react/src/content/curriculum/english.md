@@ -36,6 +36,10 @@ Audio:
 
 ![Camper cat song](/audio/camper-cat.mp3)
 
+Video:
+
+![.map() method video](/videos/map-method.mp4)
+
 You can use markdown in the text areas of any lesson. It is not allowed in some parts the tasks.
 
 The content for this entire curriculum lives in `content/curriculum/english.md`.

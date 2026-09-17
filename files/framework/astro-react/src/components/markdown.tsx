@@ -14,6 +14,7 @@ function TableHeaderCell({ node, ...props }: TableHeaderCellProps) {
 }
 
 const AUDIO_EXTENSION = /\.(mp3|wav|ogg|m4a)$/i;
+const VIDEO_EXTENSION = /\.(mp4|webm|mov|ogv)$/i;
 
 type MarkdownImageProps = ComponentPropsWithoutRef<'img'> & { node?: unknown };
 
@@ -25,6 +26,18 @@ function MarkdownImage({ node, src, alt, ...props }: MarkdownImageProps) {
       <audio controls src={src} aria-label={alt}>
         Your browser doesn't support the audio element.
       </audio>
+    );
+  }
+
+  if (typeof src === 'string' && VIDEO_EXTENSION.test(src)) {
+    return (
+      // No captions track yet - unlike a short audio clip, video captions
+      // are often genuinely worth having, so revisit this once a video with
+      // real spoken content actually shows up.
+      // eslint-disable-next-line jsx-a11y/media-has-caption
+      <video controls src={src} aria-label={alt}>
+        Your browser doesn't support the video element.
+      </video>
     );
   }
 
