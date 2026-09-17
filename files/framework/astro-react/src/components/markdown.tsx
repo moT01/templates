@@ -15,6 +15,33 @@ function TableHeaderCell({ node, ...props }: TableHeaderCellProps) {
 
 const AUDIO_EXTENSION = /\.(mp3|wav|ogg|m4a)$/i;
 const VIDEO_EXTENSION = /\.(mp4|webm|mov|ogv)$/i;
+const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
+
+function extractYouTubeId(src: string): string | null {
+  let url: URL;
+  try {
+    url = new URL(src);
+  } catch {
+    return null;
+  }
+
+  const host = url.hostname.replace(/^(www\.|m\.)/, '');
+  let id: string | null = null;
+
+  if (host === 'youtu.be') {
+    id = url.pathname.slice(1);
+  } else if (host === 'youtube.com') {
+    if (url.pathname === '/watch') {
+      id = url.searchParams.get('v');
+    } else if (url.pathname.startsWith('/embed/')) {
+      id = url.pathname.slice('/embed/'.length);
+    } else if (url.pathname.startsWith('/shorts/')) {
+      id = url.pathname.slice('/shorts/'.length);
+    }
+  }
+
+  return id && YOUTUBE_ID.test(id) ? id : null;
+}
 
 type MarkdownImageProps = ComponentPropsWithoutRef<'img'> & { node?: unknown };
 
@@ -31,13 +58,25 @@ function MarkdownImage({ node, src, alt, ...props }: MarkdownImageProps) {
 
   if (typeof src === 'string' && VIDEO_EXTENSION.test(src)) {
     return (
-      // No captions track yet - unlike a short audio clip, video captions
-      // are often genuinely worth having, so revisit this once a video with
-      // real spoken content actually shows up.
       // eslint-disable-next-line jsx-a11y/media-has-caption
       <video controls src={src} aria-label={alt}>
         Your browser doesn't support the video element.
       </video>
+    );
+  }
+
+  const youtubeId = typeof src === 'string' ? extractYouTubeId(src) : null;
+  if (youtubeId) {
+    return (
+      <div className="video-embed">
+        <iframe
+          src={`https://www.youtube.com/embed/${youtubeId}`}
+          title={alt}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
     );
   }
 

@@ -40,6 +40,15 @@ Video:
 
 ![.map() method video](/videos/map-method.mp4)
 
+YouTube Embeds - four accepted formats (`http(s)` and `www` are optional):
+
+- `youtube.com/watch?v=VIDEO_ID`
+- `youtu.be/VIDEO_ID`
+- `youtube.com/embed/VIDEO_ID`
+- `youtube.com/shorts/VIDEO_ID`
+
+![var, let, and const in JavaScript video](https://youtu.be/MeZVVxLn26E?t=256)
+
 You can use markdown in the text areas of any lesson. It is not allowed in some parts the tasks.
 
 The content for this entire curriculum lives in `content/curriculum/english.md`.
